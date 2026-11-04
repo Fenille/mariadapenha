@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "registros": {
+      ".read": "auth != null && auth.token.email === 'rpfenille@gmail.com' && auth.token.email_verified === true",
+      "$registroId": {
+        ".write": "auth != null && (( !data.exists() && newData.exists() && newData.child('uid').val() === auth.uid && (newData.child('tipo').val() === 'ocorrencia' || newData.child('tipo').val() === 'visita') && newData.child('dataHora').isString() && newData.child('municipio').isString() && newData.child('viatura').isString() && newData.child('encarregado').isString() && newData.child('motorista').isString() && newData.child('vitimaNome').isString() && newData.child('vitimaDocumento').isString() && newData.child('endereco').isString() && newData.child('historico').isString() && newData.child('criadoEm').isNumber()) || (data.exists() && newData.exists() && auth.token.email === 'rpfenille@gmail.com' && auth.token.email_verified === true && newData.child('uid').val() === data.child('uid').val() && newData.child('tipo').val() === data.child('tipo').val() && newData.child('criadoEm').val() === data.child('criadoEm').val() && newData.child('dataHora').val() === data.child('dataHora').val() && newData.child('municipio').val() === data.child('municipio').val() && newData.child('viatura').val() === data.child('viatura').val() && newData.child('encarregado').val() === data.child('encarregado').val() && newData.child('motorista').val() === data.child('motorista').val() && newData.child('vitimaNome').val() === data.child('vitimaNome').val() && newData.child('vitimaDocumento').val() === data.child('vitimaDocumento').val() && newData.child('endereco').val() === data.child('endereco').val() && newData.child('historico').val() === data.child('historico').val() && newData.child('autorNome').val() === data.child('autorNome').val() && newData.child('autorDocumento').val() === data.child('autorDocumento').val() && newData.child('resultado').val() === data.child('resultado').val()))",
+        ".validate": "newData.hasChildren(['tipo','uid','criadoEm','dataHora','municipio','viatura','encarregado','motorista','vitimaNome','vitimaDocumento','endereco','historico'])",
+        "latitude": { ".validate": "newData.val() === null || (newData.isNumber() && newData.val() >= -90 && newData.val() <= 90)" },
+        "longitude": { ".validate": "newData.val() === null || (newData.isNumber() && newData.val() >= -180 && newData.val() <= 180)" }
+      }
+    }
+  }
+}
