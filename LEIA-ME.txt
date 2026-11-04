@@ -1,7 +1,8 @@
-Patrulha Maria da Penha V3
-1. Publique index.html E detalhe.html na raiz do repositório GitHub Pages.
-2. Firebase Realtime Database > Regras: cole database.rules.json e publique.
-3. Teste com dados fictícios: Gmail comum cadastra, não consulta; Gmail administrador consulta e corrige a localização na aba da ficha.
-4. O GPS só deve ser usado se o aparelho estiver no local real. Caso contrário, marque manualmente no mapa.
-5. Registros anteriores sem coordenadas precisam de marcação manual pelo administrador.
-6. Não insira dados reais antes de validar permissões e políticas de tratamento de dados pessoais.
+VERSÃO 5 — GERENCIAMENTO DE REGISTROS
+
+Publique index.html e detalhe.html na raiz do GitHub Pages.
+No Firebase Realtime Database > Regras, publique database.rules.json.
+A exclusão só é permitida para rpfenille@gmail.com (e-mail verificado).
+Faça backup JSON e confira o arquivo antes de qualquer exclusão.
+A exclusão é permanente; seleções seguem os filtros da consulta.
+Não exclua registros reais sem necessidade.
